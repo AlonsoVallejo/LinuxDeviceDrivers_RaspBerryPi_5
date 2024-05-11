@@ -1,0 +1,44 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "brcm,bcm2712";
+	/* set GPIO12 as PWM0(ALT0) */
+	fragment@0 {
+		target = <&gpio>;
+		__overlay__ {
+			pwm0_gpio12_pin: pwm0_gpio12_pin { 
+				brcm,pins = <12>;
+				brcm,function = <4>;
+			};
+		};
+	};
+
+	/*  need status to turn on the pwm device */
+	fragment@1 {
+		target = <&pwm>;
+		__overlay__ {
+			status = "okay";
+		};
+	};
+
+	/* instantiates platform device with the properties */
+	fragment@2 {
+		target-path = "/";
+		__overlay__ {
+			pwm0_pin12_led: pwm0_pin12_led { 
+				compatible = "pwm0_pin12_led";
+				pwms = <&pwm 0 3500000 0>;
+				pinctrl-names = "default";
+				pinctrl-0 = <&pwm0_gpio12_pin>;
+				pwm0_pin12_dc_param = <50000>;
+				status = "okay";
+			};
+		};
+	};
+
+	/* allow overrides to the default values of pwm0_pin12_dc_param property */
+	__overrides__ {
+		duty_cycle_ms 	= <&pwm0_pin12_led>,"pwm0_pin12_dc_param:0";
+	};
+};
