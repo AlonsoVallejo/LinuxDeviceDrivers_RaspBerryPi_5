@@ -17,7 +17,7 @@ pwm0_app_dev: app_fade_pwm0_devdrv.c
 	$(CC) $(CFLAGS) -o app_fade_pwm0_devdrv $<
 
 dto: pwm0-rb5-overlay.dts
-	dtc -@ -I dts -O dtb -o pwm0-rb5.dtbo pwm0-rb5-overlay.dts 
+	dtc -@ -I dts -O dtb -o pwm0-rb5.dtbo pwm0-rb5-overlay.dts
 
 clean:
 	$(MAKE) -C $(KDIR) M=$(PWD) clean

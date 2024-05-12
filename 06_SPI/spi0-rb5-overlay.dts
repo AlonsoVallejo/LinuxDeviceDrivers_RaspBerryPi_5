@@ -1,0 +1,29 @@
+/dts-v1/;
+/plugin/;
+/ {
+	compatible = "brcm,bcm2712";
+	/* Disable  spidev0.0 */
+	fragment@0 {
+		target = <&spidev0>;
+		__overlay__ {
+			status = "disabled";
+		};
+	};
+		
+	fragment@1 {
+		target = <&spi0>;
+		__overlay__ {
+			status = "okay";
+			#address-cells = <1>;
+			#size-cells = <0>;
+			/* bus driver to create */
+			spi0_nrf24_drv: spi0_nrf24_drv@0 {
+				compatible = "spi0_nrf24l01";
+				reg = <0x0>;
+				spi-max-frequency = <4000>;
+				spi-bits-per-word = <8>;
+				status = "okay";
+			};
+		};
+	};
+};

@@ -53,13 +53,13 @@ MODULE_DEVICE_TABLE(of, my_match_table);
 
 /* setup platform functions (probe and remove) and match table */
 static struct platform_driver pwm0_device_driver = {
-    .probe = platform_pwm0_probe,
-    .remove = platform_pwm0_remove,
     .driver = {
         .name = "pwm0_led_drv",
         .owner = THIS_MODULE,
         .of_match_table = of_match_ptr(my_match_table),
     },
+    .probe = platform_pwm0_probe,
+    .remove = platform_pwm0_remove,
 };
 
 /*
