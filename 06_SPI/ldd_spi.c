@@ -47,7 +47,9 @@ static struct spi_driver spi_nrf24l01_driver = {
     },
 };
 
-// Read function
+/**
+ * @brief This function read the SPI device
+ */
 static int spi_nrf24l01_read(struct spi_device *spi)
 {
     uint8_t tx_buf[2] = {0xFF, REG_RX_ADDR_P0}; // set command to read the SPI device
@@ -78,7 +80,9 @@ static int spi_nrf24l01_read(struct spi_device *spi)
     return 0;
 }
 
-// Probe function
+/**
+ * @brief This function is called on loading the driver 
+ */
 static int spi_nrf24l01_probe(struct spi_device *spi)
 {
     struct spi_nrf24l01 *nrf24l01;
@@ -100,7 +104,9 @@ static int spi_nrf24l01_probe(struct spi_device *spi)
     return 0;
 }
 
-// Remove function
+/**
+ * @brief This function is called on unloading the driver 
+ */
 static void spi_nrf24l01_remove(struct spi_device *spi)
 {
     pr_info("ldd_spi0: Removed\n");

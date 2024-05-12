@@ -1,0 +1,14 @@
+/dts-v1/;
+/plugin/;
+/ {
+	compatible = "brcm,bcm2712";
+	fragment@0 {
+		target = <&uart0>; /* Raspberry pi 5 only use UART0 */
+		__overlay__ {
+			serial_uart0_drv: serial_uart0_drv {
+				compatible = "serial_uart0_drv";
+				status = "okay";
+			};
+		};
+	};
+};
