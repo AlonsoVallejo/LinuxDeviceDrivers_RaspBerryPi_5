@@ -15,9 +15,6 @@ MODULE_AUTHOR("vallejo");
 MODULE_DESCRIPTION("device driver - GPIO Driver for raspberry pi 5");
 MODULE_VERSION("1.0");
 
-/* some function does not work in kernel 6.6.28 */
-#define USING_RASPBERRY_PI_5
-
 //LED is connected to this GPIO, check file /sys/kernel/debug/gpio */
 #define GPIO_PIN_CHIP_LED (592) 
 #define GPIO_PIN_BOARD_LABEL ("GPIO21") 
@@ -127,15 +124,11 @@ static int __init ldd_gpio_driver_init(void)
     unregister_chrdev_region(my_device_nr,1);
     return -1;
   }
- 
-#ifndef USING_RASPBERRY_PI_5
-  /*Creating struct class*/
-  dev_class = class_create(THIS_MODULE, DRV_CLASS_NAME);
-#else
+
   /*Creating struct class*/
   dev_class = class_create(DRV_CLASS_NAME);
-#endif
- if(dev_class == NULL){
+
+  if(dev_class == NULL){
     pr_err("ldd_gpio: Cannot create the struct class\n");
     class_destroy(dev_class);
     return -1;
@@ -150,9 +143,9 @@ static int __init ldd_gpio_driver_init(void)
     device_destroy(dev_class, my_device_nr);
     return -1;
   }
- /*Creating cdev structure*/
+  /*Creating cdev structure*/
   cdev_init(&cdevice, &fops);
- 
+
 
   //Checking the GPIO is valid or not
   if(gpio_is_valid(GPIO_PIN_CHIP_LED) == false){
@@ -178,7 +171,7 @@ static int __init ldd_gpio_driver_init(void)
     gpio_free(GPIO_PIN_CHIP_LED);
     return -1;
   }
-  
+
   //configure the GPIO as output
   gpio_direction_output(GPIO_PIN_CHIP_LED, 0);
 

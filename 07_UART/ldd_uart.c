@@ -42,8 +42,9 @@ static struct serdev_device_driver uart0_drv_driver = {
 /* This function is called when data is received from serial port */
 static int uart0_drv_recv(struct serdev_device *serdev, const unsigned char *buffer, size_t size) {
 	int ret = 0;
-    ret = serdev_device_write_buf(serdev, buffer, size);
 	pr_info("ldd_uart: Data recieved from Serial port (UART0) is: %c\n", buffer[0]);
+	/* To print in the serial terminal the same received data */
+    ret = serdev_device_write_buf(serdev, buffer, size);
 	return ret;
 }
 
