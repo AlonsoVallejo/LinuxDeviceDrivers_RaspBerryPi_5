@@ -40,7 +40,8 @@ static struct serdev_device_driver uart0_drv_driver = {
 };
 
 /* This function is called when data is received from serial port */
-static int uart0_drv_recv(struct serdev_device *serdev, const unsigned char *buffer, size_t size) {
+static int uart0_drv_recv(struct serdev_device *serdev, const unsigned char *buffer, size_t size) 
+{
 	int ret = 0;
 	pr_info("ldd_uart: Data recieved from Serial port (UART0) is: %c\n", buffer[0]);
 	/* To print in the serial terminal the same received data */
@@ -51,7 +52,8 @@ static int uart0_drv_recv(struct serdev_device *serdev, const unsigned char *buf
 /**
  * @brief This function is called on loading the driver 
  */
-static int serial_uart0_probe(struct serdev_device *serdev) {
+static int serial_uart0_probe(struct serdev_device *serdev) 
+{
 	int status;
 	
 	serdev_device_set_client_ops(serdev, &uart0_drv_ops);
@@ -75,12 +77,14 @@ static int serial_uart0_probe(struct serdev_device *serdev) {
 /**
  * @brief This function is called on unloading the driver 
  */
-static void serial_uart0_remove(struct serdev_device *serdev) {
+static void serial_uart0_remove(struct serdev_device *serdev) 
+{
 	pr_info("ldd_uart: Removed \n");
 	serdev_device_close(serdev);
 }
 
-static int __init ldd_uart0_driver_init(void) {
+static int __init ldd_uart0_driver_init(void) 
+{
 	if(serdev_device_driver_register(&uart0_drv_driver)) {
 		pr_err("ldd_uart: - Error! Could not load driver\n");
 		return -1;
@@ -91,7 +95,8 @@ static int __init ldd_uart0_driver_init(void) {
 /**
  * @brief This function is called, when the module is removed from the kernel
  */
-static void __exit ldd_uart0_driver_exit(void) {
+static void __exit ldd_uart0_driver_exit(void) 
+{
 	serdev_device_driver_unregister(&uart0_drv_driver);
 }
 
