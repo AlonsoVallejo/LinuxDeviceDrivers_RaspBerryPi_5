@@ -1,0 +1,131 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/vallejo/Documents/Practices_LDD/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+CC	04_Gpio/Makefile	/^CC = gcc$/;"	m
+CC	05_PWM_dto/Makefile	/^CC = gcc$/;"	m
+CFLAGS	04_Gpio/Makefile	/^CFLAGS = -Wall -Wextra -std=c99$/;"	m
+CFLAGS	05_PWM_dto/Makefile	/^CFLAGS = -Wall -Wextra -std=c99$/;"	m
+DRV_CLASS_NAME	04_Gpio/ldd_gpio.c	/^#define DRV_CLASS_NAME /;"	d	file:
+DRV_DEVICE_NAME	04_Gpio/ldd_gpio.c	/^#define DRV_DEVICE_NAME /;"	d	file:
+DRV_DEVICE_PATH	04_Gpio/usr_toggle_gpio.c	/^#define DRV_DEVICE_PATH /;"	d	file:
+DRV_PWM_CLASS_NAME	05_PWM_dto/ldd_pwm0.c	/^#define DRV_PWM_CLASS_NAME /;"	d	file:
+DRV_PWM_DEVICE_NAME	05_PWM_dto/ldd_pwm0.c	/^#define DRV_PWM_DEVICE_NAME /;"	d	file:
+DRV_PWM_DEVICE_PATH	05_PWM_dto/app_fade_pwm0_devdrv.c	/^#define DRV_PWM_DEVICE_PATH /;"	d	file:
+GPIO_PIN_BOARD_LABEL	04_Gpio/ldd_gpio.c	/^#define GPIO_PIN_BOARD_LABEL /;"	d	file:
+GPIO_PIN_CHIP_LED	04_Gpio/ldd_gpio.c	/^#define GPIO_PIN_CHIP_LED /;"	d	file:
+KDIR	01_hello_world/Makefile	/^KDIR = \/lib\/modules\/$(shell uname -r)\/build$/;"	m
+KDIR	02_procfs/Makefile	/^KDIR = \/lib\/modules\/$(shell uname -r)\/build$/;"	m
+KDIR	03_sysfs/Makefile	/^KDIR = \/lib\/modules\/$(shell uname -r)\/build$/;"	m
+KDIR	04_Gpio/Makefile	/^KDIR = \/lib\/modules\/$(shell uname -r)\/build$/;"	m
+KDIR	05_PWM_dto/Makefile	/^KDIR = \/lib\/modules\/$(shell uname -r)\/build$/;"	m
+LINUX_KERNEL_VERSION	02_procfs/procfs.c	/^#define LINUX_KERNEL_VERSION /;"	d	file:
+PWM0_DUTY_CYCLE_PATH	05_PWM_dto/app_fade_pwm0_sysfs.c	/^#define PWM0_DUTY_CYCLE_PATH /;"	d	file:
+PWM0_ENABLE_PATH	05_PWM_dto/app_fade_pwm0_sysfs.c	/^#define PWM0_ENABLE_PATH /;"	d	file:
+PWM0_PATH	05_PWM_dto/app_fade_pwm0_sysfs.c	/^#define PWM0_PATH /;"	d	file:
+PWM0_PERIOD_NS	05_PWM_dto/app_fade_pwm0_sysfs.c	/^#define PWM0_PERIOD_NS /;"	d	file:
+PWM0_PERIOD_PATH	05_PWM_dto/app_fade_pwm0_sysfs.c	/^#define PWM0_PERIOD_PATH /;"	d	file:
+PWM_EXPORT_PATH	05_PWM_dto/app_fade_pwm0_sysfs.c	/^#define PWM_EXPORT_PATH /;"	d	file:
+PWM_INIT_DUTTY_CYCLE_NS	05_PWM_dto/ldd_pwm0.c	/^#define PWM_INIT_DUTTY_CYCLE_NS /;"	d	file:
+PWM_INIT_PERIOD_NS	05_PWM_dto/ldd_pwm0.c	/^#define PWM_INIT_PERIOD_NS /;"	d	file:
+PWM_MAX_DUTTY_CYCLE	05_PWM_dto/app_fade_pwm0_devdrv.c	/^#define PWM_MAX_DUTTY_CYCLE /;"	d	file:
+PWM_PATH	05_PWM_dto/app_fade_pwm0_sysfs.c	/^#define PWM_PATH /;"	d	file:
+PWM_RANGE	05_PWM_dto/app_fade_pwm0_sysfs.c	/^#define PWM_RANGE /;"	d	file:
+PWM_UNEXPORT_PATH	05_PWM_dto/app_fade_pwm0_sysfs.c	/^#define PWM_UNEXPORT_PATH /;"	d	file:
+RD_VALUE	02_procfs/procfs.c	/^#define RD_VALUE /;"	d	file:
+USING_RASPBERRY_PI_5	04_Gpio/ldd_gpio.c	/^#define USING_RASPBERRY_PI_5$/;"	d	file:
+WR_VALUE	02_procfs/procfs.c	/^#define WR_VALUE /;"	d	file:
+all	01_hello_world/Makefile	/^all:$/;"	t
+all	02_procfs/Makefile	/^all:$/;"	t
+all	03_sysfs/Makefile	/^all:$/;"	t
+all	04_Gpio/Makefile	/^all: gpio_driver toggle_app$/;"	t
+all	05_PWM_dto/Makefile	/^all: pwm0_driver pwm0_app_sysfs pwm0_app_dev$/;"	t
+cdevice	04_Gpio/ldd_gpio.c	/^static struct cdev cdevice;$/;"	v	typeref:struct:cdev	file:
+char_device	05_PWM_dto/ldd_pwm0.c	/^static struct cdev char_device;$/;"	v	typeref:struct:cdev	file:
+clean	01_hello_world/Makefile	/^clean:$/;"	t
+clean	02_procfs/Makefile	/^clean:$/;"	t
+clean	03_sysfs/Makefile	/^clean:$/;"	t
+clean	04_Gpio/Makefile	/^clean:$/;"	t
+clean	05_PWM_dto/Makefile	/^clean:$/;"	t
+dev	02_procfs/procfs.c	/^dev_t dev = 0;$/;"	v	typeref:typename:dev_t
+dev	03_sysfs/ldd_sysfs.c	/^dev_t dev = 0;$/;"	v	typeref:typename:dev_t
+dev_class	02_procfs/procfs.c	/^static struct class *dev_class;$/;"	v	typeref:struct:class *	file:
+dev_class	03_sysfs/ldd_sysfs.c	/^static struct class *dev_class;$/;"	v	typeref:struct:class *	file:
+dev_class	04_Gpio/ldd_gpio.c	/^static struct class *dev_class;$/;"	v	typeref:struct:class *	file:
+driver_pwm0_write	05_PWM_dto/ldd_pwm0.c	/^static ssize_t driver_pwm0_write(struct file *File, const char *user_buffer, size_t len, loff_t /;"	f	typeref:typename:ssize_t	file:
+drv_open	04_Gpio/ldd_gpio.c	/^static int drv_open(struct inode *inode, struct file *file)$/;"	f	typeref:typename:int	file:
+drv_read	04_Gpio/ldd_gpio.c	/^static ssize_t drv_read(struct file *filp, char __user *buf, size_t len, loff_t *off)$/;"	f	typeref:typename:ssize_t	file:
+drv_release	04_Gpio/ldd_gpio.c	/^static int drv_release(struct inode *inode, struct file *file)$/;"	f	typeref:typename:int	file:
+drv_write	04_Gpio/ldd_gpio.c	/^static ssize_t drv_write(struct file *filp, const char __user *buf, size_t len, loff_t *off)$/;"	f	typeref:typename:ssize_t	file:
+dto	05_PWM_dto/Makefile	/^dto: pwm0-rb5-overlay.dts$/;"	t
+enable_pwm0	05_PWM_dto/app_fade_pwm0_sysfs.c	/^void enable_pwm0(void) $/;"	f	typeref:typename:void
+etx_array	02_procfs/procfs.c	/^char etx_array[20]="try_proc_array\\n";$/;"	v	typeref:typename:char[20]
+etx_attr	03_sysfs/ldd_sysfs.c	/^struct kobj_attribute etx_attr = __ATTR(etx_value, 0660, sysfs_show, sysfs_store);$/;"	v	typeref:struct:kobj_attribute
+etx_cdev	02_procfs/procfs.c	/^static struct cdev etx_cdev;$/;"	v	typeref:struct:cdev	file:
+etx_cdev	03_sysfs/ldd_sysfs.c	/^static struct cdev etx_cdev;$/;"	v	typeref:struct:cdev	file:
+etx_driver_exit	02_procfs/procfs.c	/^static void __exit etx_driver_exit(void)$/;"	f	typeref:typename:void __exit	file:
+etx_driver_exit	03_sysfs/ldd_sysfs.c	/^static void __exit etx_driver_exit(void)$/;"	f	typeref:typename:void __exit	file:
+etx_driver_init	02_procfs/procfs.c	/^static int __init etx_driver_init(void)$/;"	f	typeref:typename:int __init	file:
+etx_driver_init	03_sysfs/ldd_sysfs.c	/^static int __init etx_driver_init(void)$/;"	f	typeref:typename:int __init	file:
+etx_ioctl	02_procfs/procfs.c	/^static long etx_ioctl(struct file *file, unsigned int cmd, unsigned long arg)$/;"	f	typeref:typename:long	file:
+etx_open	02_procfs/procfs.c	/^static int etx_open(struct inode *inode, struct file *file)$/;"	f	typeref:typename:int	file:
+etx_open	03_sysfs/ldd_sysfs.c	/^static int etx_open(struct inode *inode, struct file *file)$/;"	f	typeref:typename:int	file:
+etx_read	02_procfs/procfs.c	/^static ssize_t etx_read(struct file *filp, char __user *buf, size_t len, loff_t *off)$/;"	f	typeref:typename:ssize_t	file:
+etx_read	03_sysfs/ldd_sysfs.c	/^static ssize_t etx_read(struct file *filp, $/;"	f	typeref:typename:ssize_t	file:
+etx_release	02_procfs/procfs.c	/^static int etx_release(struct inode *inode, struct file *file)$/;"	f	typeref:typename:int	file:
+etx_release	03_sysfs/ldd_sysfs.c	/^static int etx_release(struct inode *inode, struct file *file)$/;"	f	typeref:typename:int	file:
+etx_value	03_sysfs/ldd_sysfs.c	/^volatile int etx_value = 0;$/;"	v	typeref:typename:volatile int
+etx_write	02_procfs/procfs.c	/^static ssize_t etx_write(struct file *filp, const char __user *buf, size_t len, loff_t *off)$/;"	f	typeref:typename:ssize_t	file:
+etx_write	03_sysfs/ldd_sysfs.c	/^static ssize_t etx_write(struct file *filp, $/;"	f	typeref:typename:ssize_t	file:
+export_pwm	05_PWM_dto/app_fade_pwm0_sysfs.c	/^void export_pwm(void) $/;"	f	typeref:typename:void
+fops	02_procfs/procfs.c	/^static struct file_operations fops =$/;"	v	typeref:struct:file_operations	file:
+fops	03_sysfs/ldd_sysfs.c	/^static struct file_operations fops =$/;"	v	typeref:struct:file_operations	file:
+fops	04_Gpio/ldd_gpio.c	/^static struct file_operations fops =$/;"	v	typeref:struct:file_operations	file:
+fops	05_PWM_dto/ldd_pwm0.c	/^static struct file_operations fops = {$/;"	v	typeref:struct:file_operations	file:
+gpio_driver	04_Gpio/Makefile	/^gpio_driver:$/;"	t
+hello_world_exit	01_hello_world/first_driver.c	/^static void __exit hello_world_exit(void)$/;"	f	typeref:typename:void __exit	file:
+hello_world_init	01_hello_world/first_driver.c	/^static int __init hello_world_init(void)$/;"	f	typeref:typename:int __init	file:
+kobj_ref	03_sysfs/ldd_sysfs.c	/^struct kobject *kobj_ref;$/;"	v	typeref:struct:kobject *
+ldd_gpio_driver_exit	04_Gpio/ldd_gpio.c	/^static void __exit ldd_gpio_driver_exit(void)$/;"	f	typeref:typename:void __exit	file:
+ldd_gpio_driver_init	04_Gpio/ldd_gpio.c	/^static int __init ldd_gpio_driver_init(void)$/;"	f	typeref:typename:int __init	file:
+len	02_procfs/procfs.c	/^static int len = 1;$/;"	v	typeref:typename:int	file:
+main	04_Gpio/usr_toggle_gpio.c	/^int main() {$/;"	f	typeref:typename:int
+main	05_PWM_dto/app_fade_pwm0_devdrv.c	/^int main() $/;"	f	typeref:typename:int
+main	05_PWM_dto/app_fade_pwm0_sysfs.c	/^int main() $/;"	f	typeref:typename:int
+my_device_nr	04_Gpio/ldd_gpio.c	/^dev_t my_device_nr = 0;$/;"	v	typeref:typename:dev_t
+my_match_table	05_PWM_dto/ldd_pwm0.c	/^static struct of_device_id my_match_table[] = {$/;"	v	typeref:struct:of_device_id[]	file:
+open_proc	02_procfs/procfs.c	/^static int open_proc(struct inode *inode, struct file *file)$/;"	f	typeref:typename:int	file:
+parent	02_procfs/procfs.c	/^static struct proc_dir_entry *parent;$/;"	v	typeref:struct:proc_dir_entry *	file:
+platform_pwm0_probe	05_PWM_dto/ldd_pwm0.c	/^static int platform_pwm0_probe(struct platform_device *pdev) $/;"	f	typeref:typename:int	file:
+platform_pwm0_remove	05_PWM_dto/ldd_pwm0.c	/^static int platform_pwm0_remove(struct platform_device *pdev) $/;"	f	typeref:typename:int	file:
+proc_fops	02_procfs/procfs.c	/^static struct file_operations proc_fops = {$/;"	v	typeref:struct:file_operations	file:
+proc_fops	02_procfs/procfs.c	/^static struct proc_ops proc_fops = {$/;"	v	typeref:struct:proc_ops	file:
+pwm0	05_PWM_dto/ldd_pwm0.c	/^struct pwm_device *pwm0 = NULL;$/;"	v	typeref:struct:pwm_device *
+pwm0_app_dev	05_PWM_dto/Makefile	/^pwm0_app_dev: app_fade_pwm0_devdrv.c$/;"	t
+pwm0_app_sysfs	05_PWM_dto/Makefile	/^pwm0_app_sysfs: app_fade_pwm0_sysfs.c$/;"	t
+pwm0_device_driver	05_PWM_dto/ldd_pwm0.c	/^static struct platform_driver pwm0_device_driver = {$/;"	v	typeref:struct:platform_driver	file:
+pwm0_driver	05_PWM_dto/Makefile	/^pwm0_driver:$/;"	t
+pwm0_gpio12_pin	05_PWM_dto/pwm0-rb5-overlay.dts	/^			pwm0_gpio12_pin: pwm0_gpio12_pin { $/;"	l
+pwm0_pin12_led	05_PWM_dto/pwm0-rb5-overlay.dts	/^			pwm0_pin12_led: pwm0_pin12_led { $/;"	l
+pwm_class	05_PWM_dto/ldd_pwm0.c	/^static struct class *pwm_class;$/;"	v	typeref:struct:class *	file:
+pwm_device_num	05_PWM_dto/ldd_pwm0.c	/^static dev_t pwm_device_num;$/;"	v	typeref:typename:dev_t	file:
+read_proc	02_procfs/procfs.c	/^static ssize_t read_proc(struct file *filp, char __user *buffer, size_t length,loff_t * offset)$/;"	f	typeref:typename:ssize_t	file:
+release_proc	02_procfs/procfs.c	/^static int release_proc(struct inode *inode, struct file *file)$/;"	f	typeref:typename:int	file:
+set_pwm0_duty_cycle	05_PWM_dto/app_fade_pwm0_devdrv.c	/^void set_pwm0_duty_cycle(__uint32_t duty_cycle) $/;"	f	typeref:typename:void
+set_pwm0_duty_cycle	05_PWM_dto/app_fade_pwm0_sysfs.c	/^void set_pwm0_duty_cycle(__uint32_t duty_cycle_ns) $/;"	f	typeref:typename:void
+set_pwm0_period	05_PWM_dto/app_fade_pwm0_sysfs.c	/^void set_pwm0_period(__uint32_t period_ns) $/;"	f	typeref:typename:void
+sigint_handler	04_Gpio/usr_toggle_gpio.c	/^void sigint_handler(int sig) {$/;"	f	typeref:typename:void
+stop_app	04_Gpio/usr_toggle_gpio.c	/^volatile sig_atomic_t stop_app = 0;$/;"	v	typeref:typename:volatile sig_atomic_t
+sysfs_show	03_sysfs/ldd_sysfs.c	/^static ssize_t sysfs_show(struct kobject *kobj, $/;"	f	typeref:typename:ssize_t	file:
+sysfs_store	03_sysfs/ldd_sysfs.c	/^static ssize_t sysfs_store(struct kobject *kobj, $/;"	f	typeref:typename:ssize_t	file:
+toggle_app	04_Gpio/Makefile	/^toggle_app: usr_toggle_gpio.c$/;"	t
+unexport_pwm	05_PWM_dto/app_fade_pwm0_sysfs.c	/^void unexport_pwm(void) $/;"	f	typeref:typename:void
+value	02_procfs/procfs.c	/^int32_t value = 0;$/;"	v	typeref:typename:int32_t
+write_proc	02_procfs/procfs.c	/^static ssize_t write_proc(struct file *filp, const char *buff, size_t len, loff_t * off)$/;"	f	typeref:typename:ssize_t	file:

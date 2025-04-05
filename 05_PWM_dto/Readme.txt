@@ -1,23 +1,68 @@
-This is an example of creation a PWM linux device driver in Raspberry PI5.
+PWM Linux Device Driver for Raspberry Pi 5: Comprehensive Guide
 
-This example creates a kernel module to control the PWM0 using GPIO12 of the RaspBerry PI5.
-The kernel module "ldd_pwm0.c" inits the PWM0 with define period and dutty cycle. In the kernel
-module is being created a device platform file to control the PWM0 dutty cycle from user space app
-app_fade_pwm0_devdrv.c.
-The kernel modules uses a device tree overlay (pwm0-rb5-overlay.dts) to enable the PWM0 in the raspberry pi 5 by using GPIO12.
+This project demonstrates how to create and use a kernel module to control PWM0 via GPIO12 on the Raspberry Pi 5. 
+It includes kernel module development, device tree overlay setup, and user-space applications to manipulate PWM functionality.
 
-It was created another app code (app_fade_pwm0_sysyfs.c) to control the PWM0 parameters from user space using the sysfs files.
+---
 
-The app code app_fade_pwm0_devdrv.c fades the PWM0 sending values from 0-100 referencing to dutty cycle.
+Overview
+1. Objective: Control PWM0 using GPIO12 on the Raspberry Pi 5.
+2. Key Components:
+   - Kernel module: `ldd_pwm0.c` initializes PWM0 with a defined period and duty cycle. It creates a device platform file to adjust PWM0 from user-space applications.
+   - Device tree overlay: `pwm0-rb5-overlay.dts` enables PWM0 via GPIO12.
+   - User-space applications:
+     - `app_fade_pwm0_devdrv.c`: Fades PWM0 by setting duty cycle values (0–100).
+     - `app_fade_pwm0_sysyfs.c`: Controls PWM0 parameters through sysfs. Requires load DTO before run the app. 
+   - Shell script: `testSyspwm.sh` (adjust based on created pwmchip).
 
-app_fade_pwm0_sysyfs.c and testSyspwm.sh needs to be ajusted according the pwmchip that was created after loading the device tree overlay.
+---
 
-Steps to test this kernel module and app code.
+Steps to Implement and Test
 
-1.- Compile the kernel module and app code by using the local makefile: "make"
-2.- Compile the device tree overlay by using local makefile: "make dto"
-3.- load the device tree overlay .dtbo to linux: "sudo dtovleray pwm0-rb5.dtbo"
-4.- verify that overlay was correct uploader: "dtoverlay -a | grep pwm", it shall be marked " * pwm0-rb5 "
-5.- load kernel module: "sudo insmod ldd_pwm0.ko", it shall create a file in "/proc/device-tree/pwm0_pin12_led"
-6.- run app code app_fade_pwm0_devdrv : "sudo ./app_fade_pwm0_devdrv"
-7.- the GPIO12 shall start fading a PWM, test it using LED o oscilloscope.
+1. Compile Required Files
+   - Compile the kernel module and application code using the local Makefile:
+     ```
+     make
+     ```
+   - Compile the device tree overlay:
+     ```
+     make dto
+     ```
+
+2. Load the Device Tree Overlay
+   - Add the compiled device tree overlay (`pwm0-rb5.dtbo`) to the Raspberry Pi's Linux kernel:
+     ```
+     sudo dtoverlay pwm0-rb5.dtbo
+     ```
+   - Verify the overlay was correctly loaded:
+     ```
+     dtoverlay -a | grep pwm
+     ```
+     - It should appear as: `* pwm0-rb5`.
+
+3. Load the Kernel Module
+   - Load the kernel module (`ldd_pwm0.ko`) to initialize PWM0:
+     ```
+     sudo insmod ldd_pwm0.ko
+     ```
+   - After loading, a platform file should be created in `/proc/device-tree/pwm0_pin12_led`.
+
+4. Run User-Space Application
+   - Execute the application (`app_fade_pwm0_devdrv`) to control and fade the PWM duty cycle:
+     ```
+     sudo ./app_fade_pwm0_devdrv
+     ```
+   - GPIO12 will produce a fading PWM signal. Test the signal using an LED or oscilloscope.
+
+5. Alternative PWM Control
+   - Use the sysfs-based application (`app_fade_pwm0_sysyfs.c`) to control PWM parameters from user space.
+
+6. Adjust Additional Files
+   - Update `testSyspwm.sh` and `app_fade_pwm0_sysyfs.c` based on the pwmchip generated after loading the device tree overlay.
+
+---
+
+Notes
+- Hardware Requirements: Ensure GPIO12 is connected appropriately to an LED or oscilloscope for testing the PWM signal.
+- Testing: Use `app_fade_pwm0_devdrv` for dynamic fading tests and `app_fade_pwm0_sysyfs.c` for direct parameter manipulation.
+- Safety: Double-check connections and module functionality to prevent hardware issues.

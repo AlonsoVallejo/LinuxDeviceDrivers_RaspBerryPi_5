@@ -4,6 +4,9 @@
         "kdev_t.h": "c",
         "fs.h": "c",
         "gpio.h": "c",
-        "kernel.h": "c"
+        "kernel.h": "c",
+        "spi.h": "c",
+        "nrf24l01.h": "c",
+        "typeinfo": "c"
     }
 }
