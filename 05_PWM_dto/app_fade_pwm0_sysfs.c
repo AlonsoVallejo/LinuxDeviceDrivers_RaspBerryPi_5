@@ -4,7 +4,7 @@
 #include <fcntl.h>
 #include <string.h>
 
-#define PWM_PATH "/sys/class/pwm/pwmchip1" /* Set the pwmchip#, after loading the device tree overlay of PWM0 */
+#define PWM_PATH "/sys/class/pwm/pwmchip0" /* Set the pwmchip#, after loading the device tree overlay of PWM0 */
 #define PWM_EXPORT_PATH PWM_PATH "/export"
 #define PWM_UNEXPORT_PATH PWM_PATH "/unexport"
 #define PWM0_PATH PWM_PATH "/pwm0"

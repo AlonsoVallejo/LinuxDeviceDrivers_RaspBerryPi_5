@@ -12,7 +12,7 @@ Overview
    - Device tree overlay: `pwm0-rb5-overlay.dts` enables PWM0 via GPIO12.
    - User-space applications:
      - `app_fade_pwm0_devdrv.c`: Fades PWM0 by setting duty cycle values (0–100).
-     - `app_fade_pwm0_sysyfs.c`: Controls PWM0 parameters through sysfs. Requires load DTO before run the app. 
+     - `app_fade_pwm0_sysyfs.c`: Controls PWM0 parameters through sysfs. check step 5. 
    - Shell script: `testSyspwm.sh` (adjust based on created pwmchip).
 
 ---
@@ -55,8 +55,21 @@ Steps to Implement and Test
    - GPIO12 will produce a fading PWM signal. Test the signal using an LED or oscilloscope.
 
 5. Alternative PWM Control
+   - Compile the file pp_fade_pwm0_sysyfs.c.
+     ```
+     make pwm0_app_sysfs
+     ```
+   - Modify the file config.txt with this information:
+      dtoverlay=pwm,pin=12,func=4
+      dtparam=audio=off
+    ```
+    sudo nano /boot/firmware/config.txt
+    ```
+   - Reboot the Raspberry.
    - Use the sysfs-based application (`app_fade_pwm0_sysyfs.c`) to control PWM parameters from user space.
-
+     ```
+     sudo ./app_fade_pwm0_sysfs
+     ```
 6. Adjust Additional Files
    - Update `testSyspwm.sh` and `app_fade_pwm0_sysyfs.c` based on the pwmchip generated after loading the device tree overlay.
 
